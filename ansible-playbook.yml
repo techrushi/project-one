@@ -15,13 +15,8 @@
     command : sudo systemctl start docker
     become : yes
     become_user : root
-
-  - name : stop existing containers
-    shell : docker stop $(docker ps -a -q)
-  - name : delete all containers
-    shell : docker rm $(docker ps -a -q)
     
   - name: Deploy Docker Container
-    command: docker run -itd -p 8085:8081 rushi101/projects:1.0
+    command: docker run -itd -p 8087:8081 rushi101/projects:1.0
 
  
